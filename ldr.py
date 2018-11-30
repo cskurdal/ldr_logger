@@ -4,7 +4,7 @@
 # Must be used with GPIO 0.3.1a or later - earlier verions
 # are not fast enough!
 
-import RPi.GPIO as GPIO, time, os, datetime
+import RPi.GPIO as GPIO, time, os, datetime, sys
 
 DEBUG = 1
 GPIO.setmode(GPIO.BCM)
@@ -60,5 +60,3 @@ if __name__ == "__main__":
         main()
     else:
         print('enter the name of the file to save data into. Default: ldr.csv')
-    
-    
