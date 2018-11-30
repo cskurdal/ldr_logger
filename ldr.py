@@ -43,18 +43,23 @@ def saveData(data, timestamp = True):
             pass
 
 
-if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        global FILE_NAME
-       
-        FILE_NAME = sys.argv[1]
-    else:
-        print('enter the name of the file to save data into. Default: ldr.csv')
-        return
-    
-    
+def main():
     while True:
         t = RCtime(18)
         print(t)     # Read RC timing using pin 
 
         saveData(t, True)
+         
+
+if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        global FILE_NAME
+       
+        FILE_NAME = sys.argv[1]
+      
+        main()
+    else:
+        print('enter the name of the file to save data into. Default: ldr.csv')
+        return
+    
+    
