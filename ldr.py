@@ -8,7 +8,6 @@ import RPi.GPIO as GPIO, time, os, datetime, sys
 
 DEBUG = 1
 GPIO.setmode(GPIO.BCM)
-FILE_NAME = 'ldr.csv'
 
 
 def RCtime (RCpin):
@@ -24,11 +23,9 @@ def RCtime (RCpin):
     return reading
 
 
-def saveData(data, timestamp = True):
-    global FILE_NAME
-    
+def saveData(filename, data, timestamp = True):
     try:
-        f = open(FILE_NAME, 'a')
+        f = open(filename, 'a')
         
         if timestamp:
             f.write(datetime.datetime.now() + ',')
@@ -43,20 +40,18 @@ def saveData(data, timestamp = True):
             pass
 
 
-def main():
+def main(filename = 'ldr.csv'):
     while True:
         t = RCtime(18)
         print(t)     # Read RC timing using pin 
 
-        saveData(t, True)
+        saveData(filename, t, True)
          
 
 if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        global FILE_NAME
-       
-        FILE_NAME = sys.argv[1]
+    if len(sys.argv) == 2:       
+        filename = sys.argv[1]
       
-        main()
+        main(filename)
     else:
         print('enter the name of the file to save data into. Default: ldr.csv')
