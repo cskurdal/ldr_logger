@@ -60,6 +60,5 @@ if __name__ == "__main__":
         main()
     else:
         print('enter the name of the file to save data into. Default: ldr.csv')
-        return
     
     
