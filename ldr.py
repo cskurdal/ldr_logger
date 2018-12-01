@@ -30,7 +30,7 @@ def saveData(filename, data, timestamp = True):
         if timestamp:
             f.write(str(datetime.datetime.now()) + ',')
             
-        f.write(data + '\n')
+        f.write(str(data) + '\n')
     except Exception as e:
         print('saveData exception: ' + str(e))
     finally:
