@@ -31,7 +31,7 @@ def saveData(filename, data, timestamp = True):
             f.write(datetime.datetime.now() + ',')
             
         f.write(data + '\n')
-    except Exception e:
+    except Exception as e:
         print('saveData exception: ' + str(e))
     finally:
         try:
