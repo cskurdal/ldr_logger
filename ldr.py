@@ -4,6 +4,8 @@
 # Must be used with GPIO 0.3.1a or later - earlier verions
 # are not fast enough!
 
+# starting project: https://learn.adafruit.com/basic-resistor-sensor-reading-on-raspberry-pi?view=all#how-it-works
+
 import RPi.GPIO as GPIO, time, os, datetime, sys
 
 DEBUG = 1
