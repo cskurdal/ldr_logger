@@ -28,7 +28,8 @@ def saveData(filename, data, timestamp = True):
         f = open(filename, 'a')
         
         if timestamp:
-            f.write(datetime.datetime.now() + ',')
+            f.write(datetime.datetime.now())
+            f.write(',')
             
         f.write(data + '\n')
     except Exception as e:
